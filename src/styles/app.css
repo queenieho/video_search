@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@fontface {
+	font-family: 'Roboto', sans-serif;
+	src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
+
+/* WTH is app??? */
+.app {
+	/*margin: 3em;*/
+	margin: auto;
+	/*-webkit-align-self: center;*/
+	/*width:1024px;*/
+	background-color: yellow;
+	/*background-color: #FFFF00;*/
+}
+
+.search {
+	border: 10px black;
+	margin: 0 auto;
+	padding: 20px;
+	width: 1024px;
+	background-color: blue;
+}
+
+input {
+	display: inline;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	padding: 0 10px;
+	height: 40px;
+	width: 800px;
+}
+
+button {
+	display: inline;
+	border: none;
+	background-image: -webkit-linear-gradient(white, gray);
+	border-radius: 0px 5px 5px 0px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	/*width: 40px;*/
+	height: 40px;
+	padding: 0 10px;
+}
+
+.video-list {
+	margin: 0 auto;
+	background-color: grey;
+	width: 1024px;
+	padding: 20px;
+}
+
+.video-item {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+	margin: 5px 0px;
+	padding: 20px;
+}
+
+.video-item-thumb {
+	display: inline-block;
+	width: 35%;
+	background-color: green;
+}
+
+.vid-item-text {
+	display: inline-block;
+	width: 65%;
+	float: right;
+
+}
