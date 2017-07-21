@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   onInputChange(term) {
     this.setState({term}); // use setter to change values
     // console.log(term);
-    //this.props.onTermChange(term); // props is used to pass values back to the parent
+    // this.props.onTermChange(term); // props is used to pass values back to the parent
   }
 
   render() {

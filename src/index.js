@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import VideoList from './components/VideoList';
+import VideoModal from './components/VideoModal';
 import SearchBar from './components/SearchBar';
+
 import request from 'superagent';
 import './styles/app.css'
 
@@ -11,23 +14,37 @@ class App extends React.Component {
     super();
 
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null,
+      modalIsOpen: false
     };
+    // this.handleTermChange = this.handleTermChange.bind(this);
+  }
 
-    this.handleTermChange = this.handleTermChange.bind(this);
+  openModal(video) {
+    this.setState({
+      modalIsOpen: true,
+      selectedVideo: video
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false,
+      selectedVideo: null
+    });
   }
 
   handleTermChange(term) {
-    console.log(term); // to see the search term in console log
+    // console.log(term); // to see the search term in console log
     // var url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
     var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${term.replace(/\s/g, '+')}&type=video&key=AIzaSyBxSJDECpHk5_5e90dJhFit-YR4CSB4AyY`;
-    console.log(url);
+    // console.log(url);
     // request.get(url, function(err, res) {
     //   console.log(res.body.items[0]);
     // });
     request.get(url, (err, res) => {
-      console.log(res.body.items[0]);
-      this.setState({ videos: res.body.items })
+      this.setState({ videos: res.body.items });
     });
   }
 
@@ -36,8 +53,12 @@ class App extends React.Component {
       // get term changes through using props in SearchBar
 
       <div className="app">
-        <SearchBar onTermChange={this.handleTermChange} />
-        <VideoList videos={this.state.videos} />
+        <SearchBar onTermChange={term => this.handleTermChange(term)} />
+        <VideoList videos={this.state.videos} 
+                    onVideoSelect={selectedVideo => this.openModal(selectedVideo)}/>
+        <VideoModal modalIsOpen={this.state.modalIsOpen}
+                  selectedVideo={this.state.selectedVideo}
+                  onRequestClose={ () => this.closeModal() } />
       </div>
     );
   }
