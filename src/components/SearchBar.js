@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
       // 'input' in brackets makes input fields ha ha pun
       // button sends the updated term to index when pressed
       <div className="search">
-        <input onChange={event => this.onInputChange(event.target.value)}/>
+        <input placeholder="Search" onChange={event => this.onInputChange(event.target.value)}/>
         <button onClick={event => this.props.onTermChange(this.state.term)}>Search</button>
       </div>
     );

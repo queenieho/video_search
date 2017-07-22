@@ -44,6 +44,7 @@ class App extends React.Component {
     //   console.log(res.body.items[0]);
     // });
     request.get(url, (err, res) => {
+      console.log(res.body.items[0]);
       this.setState({ videos: res.body.items });
     });
   }
