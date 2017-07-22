@@ -6,15 +6,27 @@ const VideoModal = (props) => {
     return <div></div>
   }
 
-  var url = `https://www.youtube.com/embed/{props.selectedVideo.image.id.videoId}`;
+  var url = `https://www.youtube.com/embed/${props.selectedVideo.id.videoId}`;
+
 
   return (
     <Modal
+      className={{
+        base: 'modal',
+        afterOpen: 'modal_after-open',
+        beforeClose: 'modal_before-close'
+      }}
+      overlayClassName={{
+        base: 'modalOverlay',
+        afterOpen: 'modalOverlay_after-open',
+        beforeClose: 'modalOverlay_before-close'
+      }}
       isOpen={ props.modalIsOpen }
-      onRequestClose={ () => props.onRequestClose() }>
+      onRequestClose={ () => props.onRequestClose() }
+      contentLabel="Modal" >
       <div>
-        <iframe width="560" height="315" src={`${url}`} frameborder="0" allowfullscreen></iframe>
-        <button onClick={() => props.onRequestClose()}>close</button>
+        <button className="modal-btn" onClick={() => props.onRequestClose()}>close</button>
+        <iframe title={`${props.selectedVideo.id.videoId}`} src={url} allowFullScreen></iframe>
       </div>
     </Modal>
   );

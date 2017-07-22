@@ -57,8 +57,8 @@ class App extends React.Component {
         <VideoList videos={this.state.videos} 
                     onVideoSelect={selectedVideo => this.openModal(selectedVideo)}/>
         <VideoModal modalIsOpen={this.state.modalIsOpen}
-                  selectedVideo={this.state.selectedVideo}
-                  onRequestClose={ () => this.closeModal() } />
+                    selectedVideo={this.state.selectedVideo}
+                    onRequestClose={ () => this.closeModal() } />
       </div>
     );
   }

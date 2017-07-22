@@ -8,6 +8,10 @@
 	src: url('https://fonts.googleapis.com/css?family=Roboto');
 }
 
+div {
+	display: block;
+}
+
 /* WTH is app??? */
 .app {
 	/*margin: 3em;*/
@@ -39,7 +43,7 @@ input {
 button {
 	display: inline;
 	border: none;
-	background-image: -webkit-linear-gradient(white, gray);
+	background-image: -webkit-linear-gradient(white, grey);
 	border-radius: 0px 5px 5px 0px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
@@ -73,4 +77,46 @@ button {
 	width: 65%;
 	float: right;
 
+}
+
+iframe {
+	width: 853px;
+	height: 480px;
+	border: 0;
+/*	margin: 20px;
+*/}
+
+.modal-btn {
+	display: block;
+	float: right;
+	background-image: -webkit-linear-gradient(FireBrick, DarkRed);
+	width: 100%;
+	text-align: right;
+	border-radius: 0px;
+}
+
+.modal_after-open {
+	width: 853px;
+	height: 520px;
+	position: absolute;
+	margin: auto;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    /*border: 1px solid rgb(204, 204, 204);*/
+    background: rgb(0, 0, 0);
+    overflow: auto;
+    /*border-radius: 4px;*/
+    outline: none;
+    /*padding: 20px;*/
+}
+
+.modalOverlay_after-open {
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
 }
