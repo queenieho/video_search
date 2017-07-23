@@ -8,13 +8,18 @@ import VideoModal from '../components/VideoModal';
 import SearchBar from '../components/SearchBar';
 import '../styles/app.css';
 
+
 // App is sent to the main index.js
 class App extends React.Component {
   render() {
     return (
       <div>
         <SearchBar onTermChange={this.props.actions.requestVideos} />
+        
+
         <VideoList videos={this.props.videos} onVideoSelect={ selectedVideo => this.props.actions.openModal({selectedVideo}) }/>
+      
+
         <VideoModal modalIsOpen={ this.props.modalIsOpen }
                     selectedVideo={ this.props.selectedVideo }
                     onRequestClose={ () => this.props.actions.closeModal() } />
