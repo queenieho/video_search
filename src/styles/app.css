@@ -44,7 +44,7 @@ input {
 button {
 	display: inline;
 	border: none;
-	background-color: grey;
+	background-color: #9531A6;
 	background-image: -webkit-linear-gradient(#9531A6, #3023AE);
 	font-family: 'Roboto', sans-serif;
 	font-size: 22px;
