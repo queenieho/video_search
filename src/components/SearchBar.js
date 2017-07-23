@@ -9,12 +9,20 @@ class SearchBar extends React.Component {
     search = term;
   }
 
+  keyEventHandler(k) {
+    if (k.key === 'Enter') {
+      this.props.onTermChange(search);
+    }
+  }
+
+
+
   render() {
     return (
       // input updates the search term every time theres a change
       // button sends the updated term to index when pressed
       <div className="search">
-        <input placeholder="Search" onChange={event => this.onInputChange(event.target.value)} />
+        <input placeholder="Search" onChange={event => this.onInputChange(event.target.value)} onKeyPress={event => this.keyEventHandler(event)} />
         <button onClick={event => this.props.onTermChange(search)}>Search</button>
       </div>
     );
