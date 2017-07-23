@@ -6,7 +6,6 @@ import VideoItem from './VideoItem';
 // virtual DOM will know which ones to update if state changes
 const VideoList = (props) => {
   const videoItems = props.videos.map((image) => {
-    // console.log(image.id.videoId);
     return <VideoItem key={image.id.videoId}
                       video={image}
                       onVideoSelect={props.onVideoSelect} />

@@ -7,6 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Can play selected video
 - Custom Modal
 - Looks pretty now
+- Redux-fyed
+- Hover pointer
 
 ## To do
-- redux?
+- Pagination?
+- use icons for buttons?

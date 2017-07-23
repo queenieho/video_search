@@ -8,7 +8,6 @@ const VideoModal = (props) => {
 
   var url = `https://www.youtube.com/embed/${props.selectedVideo.id.videoId}`;
 
-
   return (
     <Modal
       className={{
