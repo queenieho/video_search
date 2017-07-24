@@ -24,7 +24,7 @@ const VideoModal = (props) => {
       onRequestClose={ () => props.onRequestClose() }
       contentLabel="Modal" >
       <div>
-        <button className="modal-btn" onClick={() => props.onRequestClose()}>close</button>
+        <button className="modal-btn" onClick={() => props.onRequestClose()}>Close</button>
         <iframe title={`${props.selectedVideo.id.videoId}`} src={url} allowFullScreen></iframe>
       </div>
     </Modal>

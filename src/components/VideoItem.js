@@ -1,6 +1,6 @@
 import React from 'react';
 
-// takes the object from VideoList and passes the URL into an image element
+// takes the object from VideoItem holds each list item and onClick = onVideoSelect
 const VideoItem = ({video, onVideoSelect}) => {
   return (
     <div className="video-item" onClick={() => onVideoSelect(video)}>

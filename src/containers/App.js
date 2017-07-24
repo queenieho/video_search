@@ -1,5 +1,4 @@
 import React from 'react';
-// import VideosTemp from '../components/VideosTemp';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../actions';
@@ -15,11 +14,7 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar onTermChange={this.props.actions.requestVideos} />
-        
-
         <VideoList videos={this.props.videos} onVideoSelect={ selectedVideo => this.props.actions.openModal({selectedVideo}) }/>
-      
-
         <VideoModal modalIsOpen={ this.props.modalIsOpen }
                     selectedVideo={ this.props.selectedVideo }
                     onRequestClose={ () => this.props.actions.closeModal() } />
